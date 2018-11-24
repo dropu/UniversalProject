@@ -15,25 +15,28 @@
  */
 @interface AppDelegate (AppService)
 
-//初始化服务
+// 初始化服务
 -(void)initService;
 
-//初始化 window
+// 初始化window
 -(void)initWindow;
 
-//初始化 UMeng
+// 初始化UMeng
 -(void)initUMeng;
 
-//初始化用户系统
+// 初始化用户系统
 -(void)initUserManager;
 
-//监听网络状态
+// 初始化Weex
+-(void)initWeex;
+
+// 监听网络状态
 - (void)monitorNetworkStatus;
 
-//初始化网络配置
+// 初始化网络配置
 -(void)NetWorkConfig;
 
-//单例
+// 单例
 + (AppDelegate *)shareAppDelegate;
 
 /**

@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "OpenUDID.h"
 #import <YTKNetwork.h>
+#import <WeexSDK.h>
 
 @implementation AppDelegate (AppService)
 
@@ -74,6 +75,26 @@
         KPostNotification(KNotificationLoginStateChange, @NO)
 //        [MBProgressHUD showErrorMessage:@"需要登录"];
     }
+}
+
+- (void)initWeex{
+    //business configuration
+    [WXAppConfiguration setAppGroup:@"AliApp"];
+    [WXAppConfiguration setAppName:@"WeexDemo"];
+    [WXAppConfiguration setAppVersion:@"1.0.0"];
+    
+    //init sdk environment
+    [WXSDKEngine initSDKEnvironment];
+    
+    //register custom module and component，optional
+//    [WXSDKEngine registerComponent:@"MyView" withClass:[MyViewComponent class]];
+//    [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
+    
+    //register the implementation of protocol, optional
+//    [WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];
+    
+    //set the log level
+    [WXLog setLogLevel: WXLogLevelAll];
 }
 
 #pragma mark ————— 登录状态处理 —————

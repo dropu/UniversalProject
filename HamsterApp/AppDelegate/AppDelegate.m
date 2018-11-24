@@ -15,6 +15,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     //初始化window
     [self initWindow];
     
@@ -38,6 +39,9 @@
     
     //广告页
     [AppManager appStart];
+    
+    //初始化Weex
+    [self initWeex];
     
     return YES;
 }
